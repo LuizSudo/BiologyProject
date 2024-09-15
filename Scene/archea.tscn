@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cad3vc1xqekla"]
+
+[ext_resource type="PackedScene" uid="uid://b1ulg1nbdnnwr" path="res://Assets/Archea/archea.blend" id="1_mvn6a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_73pf8"]
+size = Vector3(0.262192, 0.0822144, 0.118835)
+
+[node name="Archea" type="StaticBody3D"]
+
+[node name="archea" parent="." instance=ExtResource("1_mvn6a")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0260391, 0.00192261, 3.05176e-05)
+shape = SubResource("BoxShape3D_73pf8")

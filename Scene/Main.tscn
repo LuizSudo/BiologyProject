@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4kcdxelapdp0"]
+
+[ext_resource type="PackedScene" uid="uid://cad3vc1xqekla" path="res://Scene/archea.tscn" id="1_x4c3r"]
+[ext_resource type="PackedScene" uid="uid://b1rjv5178gh5k" path="res://Scene/Player.tscn" id="2_mlkqj"]
+
+[sub_resource type="Environment" id="Environment_xhg1l"]
+background_mode = 2
+background_energy_multiplier = 4.7
+ambient_light_color = Color(0.646029, 0.646029, 0.646029, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u608i"]
+size = Vector3(62.42, 0.969177, 108.996)
+
+[sub_resource type="BoxMesh" id="BoxMesh_e38qr"]
+
+[node name="Main" type="Node3D"]
+
+[node name="Archea" parent="." instance=ExtResource("1_x4c3r")]
+transform = Transform3D(-9.27258e-08, 2.12132, 2.12132, 9.27258e-08, 2.12132, -2.12132, -3, 0, -1.31134e-07, -4.45274, 1.47566, -2.28849)
+metadata/_edit_group_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xhg1l")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_mlkqj")]
+transform = Transform3D(0.0391201, 0, 0.999235, 0, 1, 0, -0.999235, 0, 0.0391201, 3.33596, 1.53137, -1.33172)
+slide_on_ceiling = false
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, 0, 0.985603, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.198135, -0.0154114, 0.265778)
+shape = SubResource("BoxShape3D_u608i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(61.9902, 0, 0, 0, 1, 0, 0, 0, 108.228, 0, 0, 0)
+mesh = SubResource("BoxMesh_e38qr")

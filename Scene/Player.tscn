@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1rjv5178gh5k"]
+
+[ext_resource type="Script" path="res://Scene/player.gd" id="1_oocle"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dihey"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tukxk"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_oocle")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_dihey")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_tukxk")
