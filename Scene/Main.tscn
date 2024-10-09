@@ -16,20 +16,23 @@ size = Vector3(62.42, 0.969177, 108.996)
 [node name="Main" type="Node3D"]
 
 [node name="Archea" parent="." instance=ExtResource("1_x4c3r")]
-transform = Transform3D(-9.27258e-08, 2.12132, 2.12132, 9.27258e-08, 2.12132, -2.12132, -3, 0, -1.31134e-07, -4.45274, 1.47566, -2.28849)
+transform = Transform3D(-0.520945, 0, 2.95442, 0, 3, 0, -2.95442, 0, -0.520945, -0.28152, 1.13257, -1.84673)
 metadata/_edit_group_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_xhg1l")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_mlkqj")]
-transform = Transform3D(0.0391201, 0, 0.999235, 0, 1, 0, -0.999235, 0, 0.0391201, 3.33596, 1.53137, -1.33172)
+transform = Transform3D(-2.99492e-08, -0.728395, 0.685158, -3.18391e-08, 0.685158, 0.728395, -1, -1.40392e-15, -4.37114e-08, 2.48733, 2.41821, -2.08381)
 slide_on_ceiling = false
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, 0, 0.985603, 0)
+transform = Transform3D(1, -3.37508e-14, -3.72532e-09, -1.77633e-15, 1, 2.98023e-08, 3.72529e-09, -2.98023e-08, 1, 0, 0.985603, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D/Camera3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49704, 0, 1.56155)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
